@@ -1,4 +1,3 @@
-
 package View;
 
 import java.awt.Color;
@@ -12,7 +11,10 @@ import javax.swing.Timer;
  * @author diver
  */
 public class PintarBotoes {
-    
+ 
+  public static void piscarBotoes(JButton botao, int delayMillis, Runnable callback){
+      piscarBotoes(new JButton[]{botao}, delayMillis, callback);
+  }
     
  /**
  * Método que faz os botões piscarem em sequência, alterando entre as cores vermelha e branca
@@ -65,6 +67,8 @@ public class PintarBotoes {
                     callback.run();
                 }
             }
+            
+            
         }.execute();
     }
 
